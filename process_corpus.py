@@ -35,7 +35,8 @@ for language in languages:
 	for index, row in df.iterrows():
 		if row['language'] == "Finnish" or row['language'] == "Swedish":
 			if row['language'] == language:
-				id = str(index + 2)
+				#id = str(index + 2)
+				id = str(row['id'])
 				name = row['newspaper']
 				filename = path + name + "_" + id + ".txt"
 				try:
@@ -77,8 +78,9 @@ for language in languages:
 									print "WARNING"
 							context = " ".join(words)
 							print context
-	        		        		id = str(index + 2)
-        	        				name = row['newspaper']
+	        		        		#id = str(index + 2)
+        	        				id = str(row['id'])
+							name = row['newspaper']
                 					filename = path + name + "_" + id + ".txt"
                 					print filename
                 					with open (filename, "w") as f:
